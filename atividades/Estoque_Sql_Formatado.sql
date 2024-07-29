@@ -1,50 +1,50 @@
-CREATE DATABASE Estoque;
-use Estoque;
+CREATE DATABASE Estoque5;
+use Estoque5;
 
 CREATE TABLE Cidade (
   codcidade INT  NOT NULL ,
-  cidade VARCHAR NULL,
+  cidade VARCHAR(100) NULL,
   uf CHAR(2) NULL,
   PRIMARY KEY(codcidade)
 );
  
 CREATE TABLE Categoria (
   codcategoria INT  NOT NULL ,
-  categoria VARCHAR NULL,
+  categoria VARCHAR(100) NULL,
   PRIMARY KEY(codcategoria)
 );
  
 CREATE TABLE Transportadora (
   codtransportadora INT  NOT NULL ,
   Cidade_codcidade INT  NOT NULL,
-  transportadora VARCHAR NULL,
-  endereco VARCHAR NULL,
+  transportadora VARCHAR(100) NULL,
+  endereco VARCHAR(100) NULL,
   num INT  NULL,
-  bairro VARCHAR NULL,
+  bairro VARCHAR(100) NULL,
   cep CHAR(9) NULL,
   cnpj CHAR(18) NULL,
-  insc VARCHAR NULL,
-  contato VARCHAR NULL,
+  insc VARCHAR(100) NULL,
+  contato VARCHAR(100) NULL,
   tel CHAR(14) NULL,
   PRIMARY KEY(codtransportadora),
   FOREIGN KEY (Cidade_codcidade) 
-  REFERENCES cidade(codcidade)
+  REFERENCES Cidade(codcidade)
 );
  
 CREATE TABLE Loja (
   codloja INT  NOT NULL ,
   Cidade_codcidade INT  NOT NULL,
-  nome VARCHAR NULL,
-  endereco VARCHAR NULL,
+  nome VARCHAR(100) NULL,
+  endereco VARCHAR(100) NULL,
   num INT  NULL,
-  bairro VARCHAR NULL,
+  bairro VARCHAR(100) NULL,
   tel CHAR(14) NULL,
-  insc VARCHAR NULL,
+  insc VARCHAR(100) NULL,
   cnpj CHAR(18) NULL,
-  cep CHAR(9) NULL,
+  cep CHAR(99) NULL,
   PRIMARY KEY(codloja),
   FOREIGN KEY (Cidade_codcidade) 
-  REFERENCES cidade(codcidade)
+  REFERENCES Cidade(codcidade)
 );
  
 CREATE TABLE Entrada (
@@ -64,14 +64,14 @@ CREATE TABLE Entrada (
 CREATE TABLE Fornecedor (
   codfornecedor INT  NOT NULL ,
   Cidade_codcidade INT  NOT NULL,
-  fornecedor VARCHAR NULL,
-  endereco VARCHAR NULL,
+  fornecedor VARCHAR(100) NULL,
+  endereco VARCHAR(100) NULL,
   num INT  NULL,
-  bairro VARCHAR NULL,
+  bairro VARCHAR(100) NULL,
   cep CHAR(9) NULL,
-  contato VARCHAR NULL,
+  contato VARCHAR(100) NULL,
   cnpj CHAR(18) NULL,
-  insc VARCHAR NULL,
+  insc VARCHAR(100) NULL,
   tel CHAR(14) NULL,
   PRIMARY KEY(codfornecedor),
   FOREIGN KEY(Cidade_codcidade) 
@@ -96,7 +96,7 @@ CREATE TABLE Produto (
   codproduto INT  NOT NULL ,
   Categoria_codcategoria INT  NOT NULL,
   Fornecedor_codfornecedor INT  NOT NULL,
-  descricao VARCHAR NULL,
+  descricao VARCHAR(100) NULL,
   peso REAL NULL,
   qtdemin INT  NULL,
   PRIMARY KEY(codproduto),
@@ -110,7 +110,7 @@ CREATE TABLE ItemEntrada (
   coditementrada INT  NOT NULL ,
   Produto_codproduto INT  NOT NULL,
   Entrada_codentrada INT  NOT NULL,
-  lote VARCHAR NULL,
+  lote VARCHAR(100) NULL,
   qtde INT  NULL,
   valor REAL NULL,
   PRIMARY KEY(coditementrada),
@@ -122,7 +122,7 @@ CREATE TABLE ItemSaida (
   coditemsaida INT  NOT NULL ,
   Saida_codsaida INT  NOT NULL,
   Produto_codproduto INT  NOT NULL,
-  lote VARCHAR NULL,
+  lote VARCHAR(100) NULL,
   qtde INT  NULL,
   valor REAL NULL,
   PRIMARY KEY(coditemsaida),
@@ -149,20 +149,21 @@ INSERT INTO Cidade VALUES (6, 'Vitória', 'ES');
 INSERT INTO Cidade VALUES (7, 'Guarapari', 'ES');
 INSERT INTO Cidade VALUES (8, 'Rio de Janeiro', 'RJ');
 
+
 INSERT INTO Loja VALUES 
-(1, 1, 'Paraíso dos Eletrodomésticos', 'Rua João da Silva', 100, 'Centro', '1111-2222', '123.321.00', '94.405.385/0001-35');
+(1, 1, 'Paraíso dos Eletrodomésticos', 'Rua João da Silva, 100', 100, 'Centro', '1111-2222', '123.321.00', '94.405.385/0001-35', '0000-000');
 INSERT INTO Loja VALUES 
-(2, 2, 'Eletromundo', 'Rua 1º de maio', 1500, 'Centro', '1111-2221', '123.456.00', '94.405.385/0002-35');
+(2, 2, 'Eletromundo', 'Rua 1º de mai, 1500', 1500, 'Centro', '1111-2221', '123.456.00', '94.405.385/0002-35', '0000-000');
 INSERT INTO Loja VALUES 
-(3, 3, 'Minaseletro', 'Rua JK', 95, 'Centro', '1111-2223', '654.321.00', '94.405.385/0003-35');
+(3, 3, 'Minaseletro', 'Rua JK, 95', 95, 'Centro', '1111-2223', '654.321.00', '94.405.385/0003-35', '0000-000');
 INSERT INTO Loja VALUES 
-(4, 4, 'SPEletro', 'Rua A', 102, 'Centro', '1111-2224', '123.321.04', '94.405.385/0004-35');
+(4, 4, 'SPEletro', 'Rua A, 102', 102, 'Centro', '1111-2224', '123.321.04', '94.405.385/0004-35', '0000-000');
 INSERT INTO Loja VALUES 
-(5, 5, 'Eletrodomésticos e cia.', 'Rua José Junior', 71, 'Centro', '1111-2225', '123.321.05', '94.405.385/0005-35');
+(5, 5, 'Eletrodomésticos e cia.', 'Rua José Junior, 71', 71, 'Centro', '1111-2225', '123.321.05', '94.405.385/0005-35', '0000-000');
 INSERT INTO Loja VALUES 
-(6, 6, 'Vitória Eletrodomésticos', 'Rua Beira Mar', 100, 'Centro', '1111-2226', '123.321.06', '94.405.385/0006-35');
+(6, 6, 'Vitória Eletrodomésticos', 'Rua Beira Mar, 100', 100, 'Centro', '1111-2226', '123.321.06', '94.405.385/0006-35', '0000-000');
 INSERT INTO Loja VALUES 
-(7, 7, 'GuarapaEletrodomésticos', 'Rua dos Bandeirantes', 149, 'Centro', '1111-2227', '123.321.07', '94.405.385/0007-35');
+(7, 7, 'GuarapaEletrodomésticos', 'Rua dos Bandeirantes, 149', 149, 'Centro', '1111-2227', '123.321.07', '94.405.385/0007-35', '0000-000');
 
 INSERT INTO Fornecedor VALUES 
 (1, 4, 'LG', 'Av. Brasil', 1, 'Centro', '12000-321', 'Fábio', '94.405.385/0007-35', '123.321.07', '1234-4321');
@@ -206,7 +207,7 @@ INSERT INTO Produto VALUES
 INSERT INTO Produto VALUES 
 (13, 5, 5, 'Cama de casal 1,60 Colônia - Castanho Escuro com Preto', 4.9, 4);
  
-NSERT INTO Transportadora VALUES 
+INSERT INTO Transportadora VALUES 
 (1, 8, 'RapiTrans', 'Rua 20 de Maio', 90, 'Centro', '12000-789', '94.405.385/0007-35', '123.321.07', 'Juninho', '1234-4321');
 
 -- Usando o formato YYYY-MM-DD para datas
@@ -320,6 +321,8 @@ INSERT INTO ItemSaida VALUES
 INSERT INTO ItemSaida VALUES 
 (19, 7, 3, 'AB0042', 5, 925.00);
  
+
+
 /*Listagem 3. Produtos em estoque.
   
 Listagem 4. Produtos com quantidade abaixo do mínimo.
