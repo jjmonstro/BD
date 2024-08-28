@@ -1,5 +1,8 @@
-CREATE DATABASE Estoque3;
-use Estoque3;
+CREATE DATABASE Estoque;
+use Estoque;
+
+--MATHEUS BERNARDINO 2AI--
+--JOAO PEDRO CORREIA 2AI--
 
 CREATE TABLE Cidade (
   codcidade INT  NOT NULL ,
@@ -96,7 +99,7 @@ CREATE TABLE Produto (
   codproduto INT  NOT NULL ,
   Categoria_codcategoria INT  NOT NULL,
   Fornecedor_codfornecedor INT  NOT NULL,
-  descricao VARCHAR(355) NULL,
+  descricao VARCHAR(255) NULL,
   peso REAL NULL,
   qtdemin INT  NULL,
   PRIMARY KEY(codproduto),
@@ -131,59 +134,56 @@ CREATE TABLE ItemSaida (
 );
 
 
-INSERT INTO categoria (codcategoria,  categoria) VALUES (1, 'Eletr√¥nico');
-INSERT INTO categoria VALUES (2, 'Eletrodom√©stico');
-INSERT INTO categoria VALUES (3, 'Inform√°tica');
+INSERT INTO categoria (codcategoria,  categoria) VALUES (1, 'EletrÙnico');
+INSERT INTO categoria VALUES (2, 'EletrodomÈstico');
+INSERT INTO categoria VALUES (3, 'Inform·tica');
 INSERT INTO categoria VALUES (4, 'Telefonia');
-INSERT INTO categoria VALUES (5, 'M√≥veis');
+INSERT INTO categoria VALUES (5, 'MÛveis');
  
  select * from categoria
 
-INSERT INTO cidade VALUES (1, 'Muria√©', 'MG');
+INSERT INTO cidade VALUES (1, 'MuriaÈ', 'MG');
 INSERT INTO cidade VALUES (2, 'Belo Horizonte', 'MG');
-INSERT INTO cidade VALUES (3, 'Divin√≥polis', 'MG');
-INSERT INTO cidade VALUES (4, 'S√£o Paulo', 'SP');
-INSERT INTO cidade VALUES (5, 'Santo Andr√©', 'SP');
-INSERT INTO cidade VALUES (6, 'Vit√≥ria', 'ES');
+INSERT INTO cidade VALUES (3, 'DivinÛpolis', 'MG');
+INSERT INTO cidade VALUES (4, 'S„o Paulo', 'SP');
+INSERT INTO cidade VALUES (5, 'Santo AndrÈ', 'SP');
+INSERT INTO cidade VALUES (6, 'VitÛria', 'ES');
 INSERT INTO cidade VALUES (7, 'Guarapari', 'ES');
 INSERT INTO cidade VALUES (8, 'Rio de Janeiro', 'RJ');
  
 
-INSERT INTO Loja VALUES (1, 1, 'Para√≠so dos Eletrodom√©sticos', 'Rua Jo√£o da Silva', 100, 'Centro', '1111-2222', '123.321.00', '94.405.385/0001-35', '00000-000');
-INSERT INTO Loja VALUES (2, 2, 'Eletromundo', 'Rua 1¬∫ de maio', 1500, 'Centro', '1111-2221', '123.456.00', '94.405.385/0002-35', '00000-000');
+INSERT INTO Loja VALUES (1, 1, 'ParaÌso dos EletrodomÈsticos', 'Rua Jo„o da Silva', 100, 'Centro', '1111-2222', '123.321.00', '94.405.385/0001-35', '00000-000');
+INSERT INTO Loja VALUES (2, 2, 'Eletromundo', 'Rua 1∫ de maio', 1500, 'Centro', '1111-2221', '123.456.00', '94.405.385/0002-35', '00000-000');
 INSERT INTO Loja VALUES (3, 3, 'Minaseletro', 'Rua JK', 95, 'Centro', '1111-2223', '654.321.00', '94.405.385/0003-35', '00000-000');
 INSERT INTO Loja VALUES (4, 4, 'SPEletro', 'Rua A', 102, 'Centro', '1111-2224', '123.321.04', '94.405.385/0004-35', '00000-000');
-INSERT INTO Loja VALUES (5, 5, 'Eletrodom√©sticos e cia.', 'Rua Jos√© Junior', 71, 'Centro', '1111-2225', '123.321.05', '94.405.385/0005-35', '00000-000');
-INSERT INTO Loja VALUES (6, 6, 'Vit√≥ria Eletrodom√©sticos', 'Rua Beira Mar', 100, 'Centro', '1111-2226', '123.321.06', '94.405.385/0006-35', '00000-000');
-INSERT INTO Loja VALUES (7, 7, 'GuarapaEletrodom√©sticos', 'Rua dos Bandeirantes', 149, 'Centro', '1111-2227', '123.321.07', '94.405.385/0007-35', '00000-000');
+INSERT INTO Loja VALUES (5, 5, 'EletrodomÈsticos e cia.', 'Rua JosÈ Junior', 71, 'Centro', '1111-2225', '123.321.05', '94.405.385/0005-35', '00000-000');
+INSERT INTO Loja VALUES (6, 6, 'VitÛria EletrodomÈsticos', 'Rua Beira Mar', 100, 'Centro', '1111-2226', '123.321.06', '94.405.385/0006-35', '00000-000');
+INSERT INTO Loja VALUES (7, 7, 'GuarapaEletrodomÈsticos', 'Rua dos Bandeirantes', 149, 'Centro', '1111-2227', '123.321.07', '94.405.385/0007-35', '00000-000');
 
-
-INSERT INTO Fornecedor VALUES (1, 4, 'LG', 'Av. Brasil', 1, 'Centro', '12000-321', 'F√°bio', '94.405.385/0007-35', '123.321.07', '1234-4321');
+INSERT INTO Fornecedor VALUES (1, 4, 'LG', 'Av. Brasil', 1, 'Centro', '12000-321', 'F·bio', '94.405.385/0007-35', '123.321.07', '1234-4321');
 INSERT INTO Fornecedor VALUES (2, 4, 'Nokia', 'Av. Afonso Pena', 198, 'Centro', '12000-321', 'Carlos', '94.405.385/0007-35', '123.321.07', '1234-4321');
 INSERT INTO Fornecedor VALUES (3, 4, 'Gradiente', 'Av. Paraiso', 3654, 'Centro', '12000-321', 'Felipe', '94.405.385/0007-35', '123.321.07', '1234-4321');
 INSERT INTO Fornecedor VALUES (4, 4, 'Philips', 'Av. Joaquim Gabriel', 24, 'Centro', '12000-321', 'Alex', '94.405.385/0007-35', '123.321.07', '1234-4321');
 INSERT INTO Fornecedor VALUES (5, 4, 'Politorno', 'Av. Manoel de Nobrega', 156, 'Centro', '12000-321', 'Breno', '94.405.385/0007-35', '123.321.07', '1234-4321');
-INSERT INTO Fornecedor VALUES (6, 4, 'HP', 'Rua Santa Efig√™nia', 1092, 'Centro', '12000-321', 'Vanessa', '94.405.385/0007-35', '123.321.07', '1234-4321');
-INSERT INTO Fornecedor VALUES (7, 4, 'Brastemp', 'Av. Interlagos', 1098, 'Centro', '12000-321', 'F√°bio', '94.405.385/0007-35', '123.321.07', '1234-4321');
+INSERT INTO Fornecedor VALUES (6, 4, 'HP', 'Rua Santa EfigÍnia', 1092, 'Centro', '12000-321', 'Vanessa', '94.405.385/0007-35', '123.321.07', '1234-4321');
+INSERT INTO Fornecedor VALUES (7, 4, 'Brastemp', 'Av. Interlagos', 1098, 'Centro', '12000-321', 'F·bio', '94.405.385/0007-35', '123.321.07', '1234-4321');
  
-
 INSERT INTO Produto VALUES (1, 1, 1, 'TV 50" Plasma 600Hz c/ HDMI, Conversor Digital Integrado, Entrada p/ PC e USB 50PJ350 - LG', 39.9, 3);
-INSERT INTO Produto VALUES (2, 1, 4, 'DVD Player c/ karaok√™, Entrada USB e DivX - DVP3520KX - Philips', 1.5, 5);
+INSERT INTO Produto VALUES (2, 1, 4, 'DVD Player c/ karaokÍ, Entrada USB e DivX - DVP3520KX - Philips', 1.5, 5);
 INSERT INTO Produto VALUES (3, 1, 3, 'TV 37" LCD - LCD3730 - (1366 X 768 Pixels) c/ HDTV Ready, Entrada HDMI, Widescreen e Progressive Scan - Gradiente', 3, 2);
 INSERT INTO Produto VALUES (4, 2, 7, 'Refrigerador Brastemp Ative! Frost Free 403 litros BRM47', 81, 2);
 INSERT INTO Produto VALUES (5, 2, 7, 'Lavadora e Secadora de Roupa 7kg Ative! BWS24 - Prata - Brastemp', 75, 2);
 INSERT INTO Produto VALUES (6, 2, 1, 'Forno de Microondas Solo 30 Litros 110V Branco - LG', 15, 4);
-INSERT INTO Produto VALUES (7, 3, 6, 'Notebook HP G42-245br c/ Intel¬Æ Pentium Dual Core T4500 2.3GHz 3GB 320GB DVD-RW Webcam LED 14‚Äù Windows 7 Premium - HP', 1.5, 2);
+INSERT INTO Produto VALUES (7, 3, 6, 'Notebook HP G42-245br c/ IntelÆ Pentium Dual Core T4500 2.3GHz 3GB 320GB DVD-RW Webcam LED 14î Windows 7 Premium - HP', 1.5, 2);
 INSERT INTO Produto VALUES (8, 3, 6, 'Multifuncional Jato de Tinta Deskjet F4480 (Impressora + Copiadora + Scanner) - HP', 4.9, 4);
-INSERT INTO Produto VALUES (9, 4, 1, 'LG GT360 Messenger Vermelho - GSM c/ Teclado Qwerty, C√¢mera 2.0MP c/ zoom 4x, Filmadora, MP3 Player, R√°dio FM, Bluetooth Est√©reo 2.0, Fone e Cabo de Dados', 0.6, 1);
-INSERT INTO Produto VALUES (10, 4, 2, 'Smartphone Nokia N8 Prata - GSM c/ Sistema Operacional Symbian 3, Tecnologia 3G, Wi-Fi, TouchScreen, GPS, C√¢mera 12MP c/ lente Carl Zeiss c/ Flash Xenon e C√¢mera p/ Chamadas de Video, Filmadora HD c/ Sa√≠da HDMI e Som Dolby Digital, MP3 Player, R√°dio FM, Bluetooth Est√©reo 3.0, Cabo de Dados, Fone e Mem√≥ria interna de 16GB', 0.6, 1);
+INSERT INTO Produto VALUES (9, 4, 1, 'LG GT360 Messenger Vermelho - GSM c/ Teclado Qwerty, C‚mera 2.0MP c/ zoom 4x, Filmadora, MP3 Player, R·dio FM, Bluetooth EstÈreo 2.0, Fone e Cabo de Dados', 0.6, 1);
+INSERT INTO Produto VALUES (10, 4, 2, 'Smartphone Nokia N8 Prata - GSM c/ Sistema Operacional Symbian 3, Tecnologia 3G, Wi-Fi, TouchScreen, GPS, C‚mera 12MP c/ lente Carl Zeiss c/ Flash Xenon e C‚mera p/ Chamadas de Video, Filmadora HD c/ SaÌda HDMI e Som Dolby Digital, MP3 Player, R·dio FM, Bluetooth EstÈreo 3.0, Cabo de Dados, Fone e MemÛria interna de 16GB', 0.6, 1);
 INSERT INTO Produto VALUES (11, 5, 5, 'Mesa Malta Branca - Politorno', 4.9, 4);
 INSERT INTO Produto VALUES (12, 5, 5, 'Mesa de Estudo Resende - Branca - Politorno', 4.9, 4);
-INSERT INTO Produto VALUES (13, 5, 5, 'Cama de casal 1,60 Col√¥nia - Castanho Escuro com Preto', 4.9, 4);
-
+INSERT INTO Produto VALUES (13, 5, 5, 'Cama de casal 1,60 ColÙnia - Castanho Escuro com Preto', 4.9, 4);
 
 INSERT INTO Transportadora VALUES (1, 8, 'RapiTrans', 'Rua 20 de Maio', 90, 'Centro', '12000-789', '94.405.385/0007-35', '123.321.07', 'Juninho', '1234-4321');
- 
+
 INSERT INTO Entrada VALUES (1, 1, '02/20/2010', '03/01/2010', 1539.01, 720.00, 0000001, 153.90);
 INSERT INTO Entrada VALUES (2, 1, '03/13/2010', '04/07/2010', 2984.00, 832.00, 0000002, 298.40);
 INSERT INTO Entrada VALUES (3, 1, '03/28/2010', '04/14/2010', 489.00, 218.00, 0000003, 48.90);
@@ -191,7 +191,7 @@ INSERT INTO Entrada VALUES (4, 1, '04/27/2010', '04/30/2010', 3982.01, 1023.00, 
 INSERT INTO Entrada VALUES (5, 1, '05/19/2010', '05/30/2010', 1827.00, 291.00, 0000005, 182.70);
 INSERT INTO Entrada VALUES (6, 1, '06/03/2010', '06/25/2010', 9812.00, 934.00, 0000006, 981.20);
 INSERT INTO Entrada VALUES (7, 1, '08/01/2010', '09/01/2010', 19876.00, 1034.00, 0000007, 1987.60);
-														   
+											   
 INSERT INTO Saida VALUES (1, 1, 1, 300.00, 180.00, 30.00);
 INSERT INTO Saida VALUES (2, 1, 1, 1073.00, 180.00, 107.30);
 INSERT INTO Saida VALUES (3, 2, 1, 512.00, 250.00, 51.20);
@@ -200,7 +200,6 @@ INSERT INTO Saida VALUES (5, 4, 1, 800.00, 0.00, 80.00);
 INSERT INTO Saida VALUES (6, 5, 1, 296.00, 140.00, 29.60);
 INSERT INTO Saida VALUES (7, 6, 1, 724.00, 92.00, 72.40);
 INSERT INTO Saida VALUES (8, 7, 1, 310.00, 153.00, 31.00);
- 
 
 INSERT INTO ItemEntrada VALUES (1, 7, 1, 'AB0021', 30, 120.00);
 INSERT INTO ItemEntrada VALUES (2, 13, 1, 'AB0022', 49, 160.00);
@@ -221,7 +220,7 @@ INSERT INTO ItemEntrada VALUES (16, 1, 6, 'AB0038', 2, 120.00);
 INSERT INTO ItemEntrada VALUES (17, 12, 7, 'AB0040', 83, 539.00);
 INSERT INTO ItemEntrada VALUES (18, 5, 7, 'AB0041', 24, 170.00);
 INSERT INTO ItemEntrada VALUES (19, 3, 7, 'AB0042', 8, 925.00);
- 
+
 INSERT INTO ItemSaida VALUES (1, 1, 7, 'AB0021', 16, 120.00);
 INSERT INTO ItemSaida VALUES (2, 1, 13, 'AB0022', 46, 160.00);
 INSERT INTO ItemSaida VALUES (3, 1, 1, 'AB0023', 16, 90.00);
@@ -242,45 +241,93 @@ INSERT INTO ItemSaida VALUES (17, 7, 12, 'AB0040', 80, 539.00);
 INSERT INTO ItemSaida VALUES (18, 7, 5, 'AB0041', 22, 170.00);
 INSERT INTO ItemSaida VALUES (19, 7, 3, 'AB0042', 5, 925.00);
 
-
-
---Listagem 3. Produtos em estoque.--
-
-select @qtdEntrada
-
-select * from Produtos p 
-inner join ItemEntrada ie on p.codproduto = ie.Produto_codproduto
-inner join ItemSaida i on ie.qtde = i.qtde
-where ie.qtde - i.qtde < p.qtdemin
-
-Listagem 4. Produtos com quantidade abaixo do m√≠nimo.--
-tbl prod
-select * from Produto p
-inner join ItemEntrada ie on p.codproduto = ie.Produto_codproduto
-inner join ItemSaida i on ie.qtde = i.qtde
-where ie.qtde - i.qtde < p.qtdemin
-
-Listagem 5. Produtos separados por fornecedor.
-
-Listagem 6. tempo m√©dio de chegada do pedido
+-- Listagem 3. Produtos em estoque.
 SELECT 
-    AVG(DATEDIFF(DAY, dataped, dataentr)) AS TempoMedioChegada
+    (ItemEntrada.qtde - ItemSaida.qtde) AS ProdutosEmEstoque, 
+    ItemEntrada.lote 
 FROM 
-    Entrada
-	
-Listagem 7. Total de sa√≠da separados por loja.
-SELECT l.nome, SUM(s.total) from Saida s, Loja l where l.codloja = s.Loja_codloja GROUP BY l.nome
+    ItemEntrada 
+INNER JOIN 
+    ItemSaida 
+ON 
+    ItemEntrada.lote = ItemSaida.lote;
 
-Listagem correx 8. Listagem dos pesos de entrada e sa√≠da.
-SELECT s.qtde*p.peso as peso, s.coditemsaida FROM ItemSaida s, Produto p where s.Produto_codproduto = p.codproduto GROUP BY s.coditemsaida
-  
-Listagem bernaredo 9. Total de frete gasto na entrada e sa√≠da.
+-- Listagem 4. Produtos com quantidade abaixo do mÌnimo.
+SELECT 
+    ItemEntrada.lote, 
+    (ItemEntrada.qtde - ItemSaida.qtde) AS ProdutosEmEstoque 
+FROM 
+    ItemEntrada 
+INNER JOIN 
+    ItemSaida 
+ON 
+    ItemEntrada.lote = ItemSaida.lote 
+INNER JOIN 
+    Produto 
+ON 
+    ItemEntrada.Produto_codproduto = Produto.codproduto 
+WHERE 
+    (ItemEntrada.qtde - ItemSaida.qtde) < Produto.qtdemin;
 
- 
-Listagem bernardo 10. Quantidade de item por categoria.
+-- Listagem 5. Produtos separados por fornecedor.
+SELECT 
+    Produto.codproduto, 
+    Produto.descricao, 
+    Produto.peso, 
+    Produto.qtdemin, 
+    Fornecedor.codfornecedor, 
+    Fornecedor.fornecedor
+FROM 
+    Produto
+INNER JOIN 
+    Fornecedor
+ON 
+    Produto.Fornecedor_codfornecedor = Fornecedor.codfornecedor
 
 
+-- Listagem 6. tempo mÈdio de chegada do pedido.
+select avg(DATEDIFF(DAY, dataped, dataentr)) as MediaDeDias from Entrada
+
+-- Listagem 7. Total de saÌda separados por loja.
+select Saida.*, Loja.codloja from Saida
+inner join Loja on Saida.Loja_codloja = Loja.codloja
+
+-- Listagem 8. Listagem dos pesos de entrada e saÌda.
+SELECT 
+    ItemEntrada.lote AS Lote,
+    ItemEntrada.Produto_codproduto AS CodigoProduto,
+    ItemEntrada.qtde AS QuantidadeEntrada,
+    Produto.peso AS PesoUnitarioProduto,
+    ItemEntrada.qtde * Produto.peso AS PesoTotalEntrada,
+    ItemSaida.qtde AS QuantidadeSaida,
+    ItemSaida.qtde * Produto.peso AS PesoTotalSaida
+FROM 
+    ItemEntrada
+INNER JOIN 
+    ItemSaida ON ItemEntrada.lote = ItemSaida.lote 
+    AND ItemEntrada.Produto_codproduto = ItemSaida.Produto_codproduto
+INNER JOIN 
+    Produto ON ItemEntrada.Produto_codproduto = Produto.codproduto
+
+-- Listagem 9. Total de frete gasto na entrada e saÌda.
+select sum(Entrada.frete) + sum(Saida.frete) from Entrada
+inner join Saida on Entrada.codentrada = Saida.codsaida
+
+-- Listagem 10. Quantidade de item por categoria
+SELECT 
+    Categoria.categoria AS Categoria,
+    SUM(ItemEntrada.qtde) AS QuantidadeTotalEntrada,
+    SUM(ItemSaida.qtde) AS QuantidadeTotalSaida,
+    SUM(ItemEntrada.qtde) - SUM(ItemSaida.qtde) AS QuantidadeEmEstoque
+FROM 
+    Categoria
+INNER JOIN 
+    Produto ON Categoria.codcategoria = Produto.Categoria_codcategoria
+LEFT JOIN 
+    ItemEntrada ON Produto.codproduto = ItemEntrada.Produto_codproduto
+LEFT JOIN 
+    ItemSaida ON Produto.codproduto = ItemSaida.Produto_codproduto
+GROUP BY 
+    Categoria.categoria;
 
 
-  
- 
