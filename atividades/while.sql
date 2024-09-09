@@ -1,3 +1,4 @@
+--JOAO PEDRO CORREIA       MATHEUS BERNARDINO
 --1 fatorial
 DECLARE
 	@cont int = 5,
@@ -24,7 +25,7 @@ WHILE (@N <= @Nmax)
 		IF (@N % 2 = 0)
 			BEGIN
 				SET @A = @A + 1
-				PRINT 'Números pares: ' + CAST(@N AS VARCHAR)
+				PRINT 'Nï¿½meros pares: ' + CAST(@N AS VARCHAR)
 			END;
 		SET @N = @N +1
 	END;
